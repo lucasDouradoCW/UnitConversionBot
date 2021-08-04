@@ -209,6 +209,15 @@ client.on('message', message => {
                 case "twenty":
                     num = 20;
                     break;
+                case "half":
+                    num = 1/2;
+                    break;
+                case "third":
+                    num = 1/3;
+                    break;
+                case "quarter":
+                    num = 1/4;
+                    break;
                 default:
             }
         }
@@ -222,115 +231,210 @@ client.on('message', message => {
         }
         if((word == 'millimetres' || word == 'millimeters' || word == 'mm' || word == 'millimetre' || word == 'millimeter')){
             if(!isNaN(num)){
-                output += (num + " millimetres" + metresToImperial(num/1000));
+                if(num == 1){
+                    output += (num + " millimetre" + metresToImperial(num/1000));
+                }
+                else{
+                    output += (num + " millimetres" + metresToImperial(num/1000));
+                }
                 conversions++;
             }
         }
         else if(word == 'centimetres' || word == 'centimeters' || word == 'cm' || word == 'centimetre' || word == 'centimeter'){
             if(!isNaN(num)){
-                output += (num + " centimetres" + metresToImperial(num/100));
+                if(num == 1){
+                    output += (num + " centimetre" + metresToImperial(num/100));
+                }
+                else{
+                    output += (num + " centimetres" + metresToImperial(num/100));
+                }
                 conversions++;
             }
         }
         else if(word == 'metres' || word == 'meters' || word == 'm' || word == 'metre' || word == 'meter'){
             if(!isNaN(num)){
-                output += (num + " metres" + metresToImperial(num));
+                if(num == 1){
+                    output += (num + " metre" + metresToImperial(num));
+                }
+                else{
+                    output += (num + " metres" + metresToImperial(num));
+                }
                 conversions++;
             }
         }
         else if(word == 'kilometres' || word == 'kilometers' || word == 'km' || word == 'kilometre' || word == 'kilometer'){
             if(!isNaN(num)){
-                output += (num + " kilometres" + metresToImperial(num*1000));
+                if(num == 1){
+                    output += (num + " kilometre" + metresToImperial(num*1000));
+                }
+                else{
+                    output += (num + " kilometres" + metresToImperial(num*1000));
+                }
                 conversions++;
             }
         }
         else if(word == 'inches' || word == 'inch'){
             if(!isNaN(num)){
-                output += (num + " inches" + inchesToMetric(num));
+                if(num == 1){
+                    output += (num + " inch" + inchesToMetric(num));
+                }
+                else{
+                    output += (num + " inches" + inchesToMetric(num));
+                }
                 conversions++;
             }
         }
         else if(word == 'feet' || word == 'ft' || word == 'foot'){
             if(!isNaN(num)){
-                output += (num + " feet" + inchesToMetric(num*12));
+                if(num == 1){
+                    output += (num + " foot" + inchesToMetric(num*12));
+                }
+                else{
+                    output += (num + " feet" + inchesToMetric(num*12));
+                }
                 conversions++;
             }
         }
         else if(word == 'yards' || word == 'yd' || word == 'yard'){
             if(!isNaN(num)){
-                output += (num + " yards" + inchesToMetric(num*36));
+                if(num == 1){
+                    output += (num + " yard" + inchesToMetric(num*36));
+                }
+                else{
+                    output += (num + " yards" + inchesToMetric(num*36));
+                }
                 conversions++;
             }
         }
         else if(word == 'miles' || word == 'mi' || word == 'mile'){
             if(!isNaN(num)){
-                output += (num + " miles" + inchesToMetric(num*63360));
+                if(num == 1){
+                    output += (num + " mile" + inchesToMetric(num*63360));
+                }
+                else{
+                    output += (num + " miles" + inchesToMetric(num*63360));
+                }
                 conversions++;
             }
         }
         else if(word == 'milligrams' || word == 'mg' || word == 'milligram'){
             if(!isNaN(num)){
-                output += (num + " milligrams" + gramsToImperial(num/1000));
+                if(num == 1){
+                    output += (num + " milligram" + gramsToImperial(num/1000));
+                }
+                else{
+                    output += (num + " milligrams" + gramsToImperial(num/1000));
+                }
                 conversions++;
             }
         }
         else if(word == 'grams' || word == 'g' || word == 'gram'){
             if(!isNaN(num)){
-                output += (num + " grams" + gramsToImperial(num));
+                if(num == 1){
+                    output += (num + " gram" + gramsToImperial(num));
+                }
+                else{
+                    output += (num + " grams" + gramsToImperial(num));
+                }
                 conversions++;
             }
         }
         else if(word == 'kilograms' || word == 'kg' || word == 'kilogram' || word == 'kilo' || word == 'kilos'){
             if(!isNaN(num)){
-                output += (num + " kilograms" + gramsToImperial(num*1000));
+                if(num == 1){
+                    output += (num + " kilogram" + gramsToImperial(num*1000));
+                }
+                else{
+                    output += (num + " kilograms" + gramsToImperial(num*1000));
+                }
                 conversions++;
             }
         }
         else if(word == 'ounces' || word == 'oz' || word == 'ounce'){
             if(!isNaN(num)){
-                output += (num + " ounces" + ouncesToMetric(num));
+                if(num == 1){
+                    output += (num + " ounce" + ouncesToMetric(num));
+                }
+                else{
+                    output += (num + " ounces" + ouncesToMetric(num));
+                }
                 conversions++;
             }
         }
         else if(word == 'pounds' || word == 'lb' || word == 'pound' || word == 'lbs'){
             if(!isNaN(num)){
-                output += (num + " pounds" + ouncesToMetric(num*16));
+                if(num == 1){
+                    output += (num + " pound" + ouncesToMetric(num*16));
+                }
+                else{
+                    output += (num + " pounds" + ouncesToMetric(num*16));
+                }
                 conversions++;
             }
         }
         else if(word == 'millilitres' || word == 'ml' || word == 'milliliters' || word == 'millilitre' || word == 'milliliter'){
             if(!isNaN(num)){
-                output += (num + " millilitres" + litresToImperial(num/1000));
+                if(num == 1){
+                    output += (num + " millilitre" + litresToImperial(num/1000));
+                }
+                else {
+                    output += (num + " millilitres" + litresToImperial(num/1000));
+                }
                 conversions++;
             }
         }
         else if(word == 'litres' || word == 'l' || word == 'liters' || word == 'litre' || word == 'liter'){
             if(!isNaN(num)){
-                output += (num + " litres" + litresToImperial(num));
+                if(num == 1){
+                    output += (num + " litre" + litresToImperial(num));
+                }
+                else{
+                    output += (num + " litres" + litresToImperial(num));
+                }
                 conversions++;
             }
         }
         else if(word == 'teaspoons' || word == 'tsp' || word == 'tsps' || word == 'teaspoon' || (word == 'tea' && (extraWord == 'spoon' || extraWord == 'spoons'))){
             if(!isNaN(num)){
-                output += (num + " teaspoons" + teaspoonsToMetric(num));
+                if(num == 1){
+                    output += (num + " teaspoon" + teaspoonsToMetric(num));
+                }
+                else{
+                    output += (num + " teaspoons" + teaspoonsToMetric(num));
+                }
                 conversions++;
             }
         }
         else if(word == 'tablespoons' || word == 'tbsp' || word == 'tbsps' || word == 'tablespoon' || (word == 'table' && (extraWord == 'spoon' || extraWord == 'spoons'))){
             if(!isNaN(num)){
-                output += (num + " tablespoons" + teaspoonsToMetric(num*3));
+                if(num == 1){
+                    output += (num + " tablespoon" + teaspoonsToMetric(num*3));
+                }
+                else{
+                    output += (num + " tablespoons" + teaspoonsToMetric(num*3));
+                }
                 conversions++;
             }
         }
         else if(word == 'cup' || word == 'cups'){
             if(!isNaN(num)){
-                output += (num + " cups" + teaspoonsToMetric(num*48));
+                if(num == 1){
+                    output += (num + " cup" + teaspoonsToMetric(num*48));
+                }
+                else{
+                    output += (num + " cups" + teaspoonsToMetric(num*48));
+                }
                 conversions++;
             }
         }
         else if(word == 'gallon' || word == 'gallons' || word == 'gal' || word == 'gals'){
             if(!isNaN(num)){
-                output += (num + " gallons" + teaspoonsToMetric(num*768));
+                if(num == 1){
+                    output += (num + " gallon" + teaspoonsToMetric(num*768));
+                }
+                else{
+                    output += (num + " gallons" + teaspoonsToMetric(num*768));
+                }
                 conversions++;
             }
         }
@@ -349,28 +453,49 @@ client.on('message', message => {
         else if(word.endsWith("mm")){
             var millimetres = parseFloat(unalteredWord.replace("mm", ""));
             if(!isNaN(millimetres)){
-                output += (millimetres + " millimetres" + metresToImperial(millimetres/1000));
+                if(millimetres == 1){
+                    output += (millimetres + " millimetre" + metresToImperial(millimetres/1000));
+                }
+                else{
+                    output += (millimetres + " millimetres" + metresToImperial(millimetres/1000));
+                }
                 conversions++;
             }
         }
         else if(word.endsWith("cm")){
             var centimetres = parseFloat(unalteredWord.replace("cm", ""));
             if(!isNaN(centimetres)){
-                output += (centimetres + " centimetres" + metresToImperial(centimetres/100));
+                if(centimetres == 1){
+                    output += (centimetres + " centimetre" + metresToImperial(centimetres/100));
+                }
+                else{
+                    output += (centimetres + " centimetres" + metresToImperial(centimetres/100));
+                }
                 conversions++;
             }
         }
         else if(word.endsWith("km")){
             var kilometres = parseFloat(unalteredWord.replace("km", ""));
             if(!isNaN(kilometres)){
-                output += (kilometres + " kilometres" + metresToImperial(kilometres*1000));
+
+                if(kilometres == 1){
+                    output += (kilometres + " kilometre" + metresToImperial(kilometres*1000));
+                }
+                else{
+                    output += (kilometres + " kilometres" + metresToImperial(kilometres*1000));
+                }
                 conversions++;
             }
         }
         else if(word.endsWith("m")){
             var metres = parseFloat(unalteredWord.replace("m", ""));
             if(!isNaN(metres)){
-                output += (metres + " metres" + metresToImperial(metres));
+                if(metres == 1){
+                    output += (metres + " metre" + metresToImperial(metres));
+                }
+                else{
+                    output += (metres + " metres" + metresToImperial(metres));
+                }
                 conversions++;
             }
         }
@@ -439,84 +564,144 @@ client.on('message', message => {
         else if(word.endsWith("yd")){
             var yards = parseFloat(unalteredWord.replace("yd", ""));
             if(!isNaN(yards)){
-                output += (yards + ' yards' + inchesToMetric(yards*36));
+                if(yards == 1){
+                    output += (yards + ' yard' + inchesToMetric(yards*36));
+                }
+                else{
+                    output += (yards + ' yards' + inchesToMetric(yards*36));
+                }
                 conversions++;
             }
         }
         else if(word.endsWith("mi")){
             var miles = parseFloat(unalteredWord.replace("mi", ""));
             if(!isNaN(miles)){
-                output += (miles + ' miles' + inchesToMetric(miles*63360));
+                if(miles == 1){
+                    output += (miles + ' mile' + inchesToMetric(miles*63360));
+                }
+                else{
+                    output += (miles + ' miles' + inchesToMetric(miles*63360));
+                }
                 conversions++;
             }
         }
         else if(word.endsWith("mg")){
             var milligrams = parseFloat(unalteredWord.replace("mg", ""));
             if(!isNaN(milligrams)){
-                output += (milligrams + ' milligrams' + gramsToImperial(milligrams/1000));
+                if(milligrams == 1){
+                    output += (milligrams + ' milligram' + gramsToImperial(milligrams/1000));
+                }
+                else{
+                    output += (milligrams + ' milligrams' + gramsToImperial(milligrams/1000));
+                }
                 conversions++;
             }
         }
         else if(word.endsWith("kg")){
             var kilograms = parseFloat(unalteredWord.replace("kg", ""));
             if(!isNaN(kilograms)){
-                output += (kilograms + ' kilograms' + gramsToImperial(kilograms*1000));
+                if(kilograms == 1){
+                    output += (kilograms + ' kilogram' + gramsToImperial(kilograms*1000));
+                }
+                else{
+                    output += (kilograms + ' kilograms' + gramsToImperial(kilograms*1000));
+                }
                 conversions++;
             }
         }
         else if(word.endsWith("g")){
             var grams = parseFloat(unalteredWord.replace("g", ""));
             if(!isNaN(grams)){
-                output += (grams + ' grams' + gramsToImperial(grams));
+                if(grams == 1){
+                    output += (grams + ' gram' + gramsToImperial(grams));
+                }
+                else{
+                    output += (grams + ' grams' + gramsToImperial(grams));
+                }
                 conversions++;
             }
         }
         else if(word.endsWith("oz")){
             var ounces = parseFloat(unalteredWord.replace("oz", ""));
             if(!isNaN(ounces)){
-                output += (ounces + ' ounces' + ouncesToMetric(ounces));
+                if(ounces == 1){
+                    output += (ounces + ' ounce' + ouncesToMetric(ounces));
+                }
+                else{
+                    output += (ounces + ' ounces' + ouncesToMetric(ounces));
+                }
                 conversions++;
             }
         }
         else if(word.endsWith("lb") || word.endsWith("lbs")){
             var pounds = parseFloat(unalteredWord.replace("lbs", "").replace("lb", ""));
             if(!isNaN(pounds)){
-                output += (pounds + ' pounds' + ouncesToMetric(pounds*16));
+                if(pounds == 1){
+                    output += (pounds + ' pound' + ouncesToMetric(pounds*16));
+                }
+                else{
+                    output += (pounds + ' pounds' + ouncesToMetric(pounds*16));
+                }
                 conversions++;
             }
         }
         else if(word.endsWith("tsp") || word.endsWith("tsps")){
             var teaspoons = parseFloat(unalteredWord.replace("tsps", "").replace("tsp", ""));
             if(!isNaN(teaspoons)){
-                output += (teaspoons + ' teaspoons' + teaspoonsToMetric(teaspoons));
+                if(teaspoons == 1){
+                    output += (teaspoons + ' teaspoon' + teaspoonsToMetric(teaspoons));
+                }
+                else{
+                    output += (teaspoons + ' teaspoons' + teaspoonsToMetric(teaspoons));
+                }
                 conversions++;
             }
         }
         else if(word.endsWith("tbsp") || word.endsWith("tbsps")){
             var tablespoons = parseFloat(unalteredWord.replace("tbsps", "").replace("tbsp", ""));
             if(!isNaN(tablespoons)){
-                output += (tablespoons + ' tablespoons' + teaspoonsToMetric(tablespoons*3));
+                if(tablespoons == 1){
+                    output += (tablespoons + ' tablespoon' + teaspoonsToMetric(tablespoons*3));
+                }
+                else{
+                    output += (tablespoons + ' tablespoons' + teaspoonsToMetric(tablespoons*3));
+                }
                 conversions++;
             }
         }
         else if(word.endsWith("gal") || word.endsWith("gals")){
             var gallons = parseFloat(unalteredWord.replace("gals", "").replace("gal", ""));
             if(!isNaN(gallons)){
-                output += (gallons + ' gallons' + teaspoonsToMetric(gallons*768));
+                if(gallons == 1){
+                    output += (gallons + ' gallon' + teaspoonsToMetric(gallons*768));
+                }
+                else{
+                    output += (gallons + ' gallons' + teaspoonsToMetric(gallons*768));
+                }
                 conversions++;
             }
         }
         else if(word.endsWith("ml")){
             var millilitres = parseFloat(unalteredWord.replace("ml", ""));
             if(!isNaN(millilitres)){
-                output += (millilitres + ' millilitres' + litresToImperial(millilitres/1000));
+                if(millilitres == 1){
+                    output += (millilitres + ' millilitre' + litresToImperial(millilitres/1000));
+                }
+                else{
+                    output += (millilitres + ' millilitres' + litresToImperial(millilitres/1000));
+                }
                 conversions++;
             }
         }
         else if(word.endsWith("l")){
             var litres = parseFloat(unalteredWord.replace("l", ""));
             if(!isNaN(litres)){
-                output += (litres + ' litres' + litresToImperial(litres));
+                if(litres == 1){
+                    output += (litres + ' litre' + litresToImperial(litres));
+                }
+                else{
+                    output += (litres + ' litres' + litresToImperial(litres));
+                }
                 conversions++;
             }
         }
