@@ -500,14 +500,14 @@ client.on('message', message => {
                 conversions++;
             }
         }
-        else if(word.endsWith("in")){
+        else if(word.endsWith("in") && letters == "in"){
             var inches = parseFloat(unalteredWord.replace("in", ""));
             if(!isNaN(inches)){
                 output += (inches + '"' + inchesToMetric(inches));
                 conversions++;
             }
         }
-        else if(word.endsWith("ft")){
+        else if(word.endsWith("ft") && letters == "ft"){
             var feet = parseFloat(unalteredWord.replace("ft", ""));
             if(!isNaN(feet)){
                 output += (feet + "'" + inchesToMetric(feet*12));
@@ -562,7 +562,7 @@ client.on('message', message => {
                 }
             }
         }
-        else if(word.endsWith("yd")){
+        else if(word.endsWith("yd") && letters == "yd"){
             var yards = parseFloat(unalteredWord.replace("yd", ""));
             if(!isNaN(yards)){
                 if(yards == 1){
@@ -574,7 +574,7 @@ client.on('message', message => {
                 conversions++;
             }
         }
-        else if(word.endsWith("mi")){
+        else if(word.endsWith("mi") && letters == "mi"){
             var miles = parseFloat(unalteredWord.replace("mi", ""));
             if(!isNaN(miles)){
                 if(miles == 1){
@@ -586,7 +586,7 @@ client.on('message', message => {
                 conversions++;
             }
         }
-        else if(word.endsWith("mg")){
+        else if(word.endsWith("mg") && letters == "mg"){
             var milligrams = parseFloat(unalteredWord.replace("mg", ""));
             if(!isNaN(milligrams)){
                 if(milligrams == 1){
@@ -598,7 +598,7 @@ client.on('message', message => {
                 conversions++;
             }
         }
-        else if(word.endsWith("kg")){
+        else if(word.endsWith("kg") && letters == "kg"){
             var kilograms = parseFloat(unalteredWord.replace("kg", ""));
             if(!isNaN(kilograms)){
                 if(kilograms == 1){
@@ -610,7 +610,7 @@ client.on('message', message => {
                 conversions++;
             }
         }
-        else if(word.endsWith("g")){
+        else if(word.endsWith("g") && letters == "g"){
             var grams = parseFloat(unalteredWord.replace("g", ""));
             if(!isNaN(grams)){
                 if(grams == 1){
@@ -622,7 +622,7 @@ client.on('message', message => {
                 conversions++;
             }
         }
-        else if(word.endsWith("oz")){
+        else if(word.endsWith("oz") && letters == "oz"){
             var ounces = parseFloat(unalteredWord.replace("oz", ""));
             if(!isNaN(ounces)){
                 if(ounces == 1){
@@ -634,7 +634,7 @@ client.on('message', message => {
                 conversions++;
             }
         }
-        else if(word.endsWith("lb") || word.endsWith("lbs")){
+        else if((word.endsWith("lb") && letters == "lb") || (word.endsWith("lbs") && letters == "lbs")){
             var pounds = parseFloat(unalteredWord.replace("lbs", "").replace("lb", ""));
             if(!isNaN(pounds)){
                 if(pounds == 1){
@@ -646,7 +646,7 @@ client.on('message', message => {
                 conversions++;
             }
         }
-        else if(word.endsWith("tsp") || word.endsWith("tsps")){
+        else if((word.endsWith("tsp") && letters == "tsp") || (word.endsWith("tsps") && letters == "tsps")){
             var teaspoons = parseFloat(unalteredWord.replace("tsps", "").replace("tsp", ""));
             if(!isNaN(teaspoons)){
                 if(teaspoons == 1){
@@ -658,7 +658,7 @@ client.on('message', message => {
                 conversions++;
             }
         }
-        else if(word.endsWith("tbsp") || word.endsWith("tbsps")){
+        else if((word.endsWith("tbsp") && letters == "tbsp") || (word.endsWith("tbsps") && letters == "tbsps")){
             var tablespoons = parseFloat(unalteredWord.replace("tbsps", "").replace("tbsp", ""));
             if(!isNaN(tablespoons)){
                 if(tablespoons == 1){
@@ -670,7 +670,7 @@ client.on('message', message => {
                 conversions++;
             }
         }
-        else if(word.endsWith("gal") || word.endsWith("gals")){
+        else if((word.endsWith("gal") && letters == "gal") || (word.endsWith("gals") && letters == "gals")){
             var gallons = parseFloat(unalteredWord.replace("gals", "").replace("gal", ""));
             if(!isNaN(gallons)){
                 if(gallons == 1){
@@ -682,7 +682,7 @@ client.on('message', message => {
                 conversions++;
             }
         }
-        else if(word.endsWith("ml")){
+        else if(word.endsWith("ml") && letters == "ml"){
             var millilitres = parseFloat(unalteredWord.replace("ml", ""));
             if(!isNaN(millilitres)){
                 if(millilitres == 1){
@@ -694,7 +694,7 @@ client.on('message', message => {
                 conversions++;
             }
         }
-        else if(word.endsWith("l")){
+        else if(word.endsWith("l") && letters == "l"){
             var litres = parseFloat(unalteredWord.replace("l", ""));
             if(!isNaN(litres)){
                 if(litres == 1){
@@ -706,14 +706,14 @@ client.on('message', message => {
                 conversions++;
             }
         }
-        else if(word.endsWith("c")){
+        else if(word.endsWith("c") && (letters == "c" || letters == "°c")){
             var celsius = parseFloat(unalteredWord.replace("°c", "").replace("c", ""));
             if(!isNaN(celsius)){
                 output += (celsius + '°C' + celsiusToFahrenheit(celsius));
                 conversions++;
             }
         }
-        else if(word.endsWith("f")){
+        else if(word.endsWith("f") && (letters == "f" || letters == "°f")){
             var fahrenheit = parseFloat(unalteredWord.replace("°f", "").replace("f", ""));
             if(!isNaN(fahrenheit)){
                 output += (fahrenheit + '°F' + FahrenheitToCelsius(fahrenheit));
