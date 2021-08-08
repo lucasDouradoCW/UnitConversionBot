@@ -226,6 +226,7 @@ client.on('message', message => {
         var feetInches = args[i].toLowerCase().replace(/[@,\/#!?\\$%\^&\*;:{}=_`\[\]~()]/g, "");
         var word = args[i].toLowerCase().replace(punctuation, '');
         var extraWord = "";
+        var letters = word.replace(/[0-9]/g, "");
         if(i != (args.length - 1)){
             extraWord = args[i+1].toLowerCase().replace(punctuation, '');
         }
@@ -450,7 +451,7 @@ client.on('message', message => {
                 conversions++;
             }
         }
-        else if(word.endsWith("mm")){
+        else if(word.endsWith("mm") && letters == "mm"){
             var millimetres = parseFloat(unalteredWord.replace("mm", ""));
             if(!isNaN(millimetres)){
                 if(millimetres == 1){
@@ -462,7 +463,7 @@ client.on('message', message => {
                 conversions++;
             }
         }
-        else if(word.endsWith("cm")){
+        else if(word.endsWith("cm" && letters == "cm")){
             var centimetres = parseFloat(unalteredWord.replace("cm", ""));
             if(!isNaN(centimetres)){
                 if(centimetres == 1){
@@ -474,7 +475,7 @@ client.on('message', message => {
                 conversions++;
             }
         }
-        else if(word.endsWith("km")){
+        else if(word.endsWith("km") && letters == "km"){
             var kilometres = parseFloat(unalteredWord.replace("km", ""));
             if(!isNaN(kilometres)){
 
@@ -487,7 +488,7 @@ client.on('message', message => {
                 conversions++;
             }
         }
-        else if(word.endsWith("m")){
+        else if(word.endsWith("m") && letters == "m"){
             var metres = parseFloat(unalteredWord.replace("m", ""));
             if(!isNaN(metres)){
                 if(metres == 1){
