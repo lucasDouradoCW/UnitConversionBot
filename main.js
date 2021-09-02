@@ -171,7 +171,7 @@ if(!message.content.startsWith(prefix) || message.author.bot) return;
     }
     
     if(command === 'convert'){
-        message.channel.send(args);
+        message.channel.send(args[0]);
     }
 });
 
