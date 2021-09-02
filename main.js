@@ -226,7 +226,7 @@ client.on('message', message => {
         var feetInches = args[i].toLowerCase().replace(/[@,\/#!?\\$%\^&\*;:{}=_`\[\]~()]/g, "");
         var word = args[i].toLowerCase().replace(punctuation, '');
         var extraWord = "";
-        var letters = word.replace(/[0-9]/g, "");
+        var letters = word.replace(/[0-9]/g, "").replace(/-/g, "");
         if(i != (args.length - 1)){
             extraWord = args[i+1].toLowerCase().replace(punctuation, '');
         }
