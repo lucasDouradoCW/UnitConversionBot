@@ -173,6 +173,11 @@ if(!message.content.startsWith(prefix) || message.author.bot) return;
     if(command === 'convert'){
         if(args.length < 4){
             message.channel.send("Looks like something went wrong! This command should be in the form:\n `?convert [number] [unit] to [unit]`\n Example:\n `?convert 1 mile to metres`");
+            return;
+        }
+        if(isNaN(args[0])){
+            message.channel.send("Make sure that the number you want to convert is written using digits from 0 to 9!\nWrite `12`, not `twelve`");
+            return;
         }
     }
 });
