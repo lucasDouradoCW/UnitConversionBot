@@ -179,6 +179,14 @@ if(!message.content.startsWith(prefix) || message.author.bot) return;
             message.channel.send("Make sure that the number you want to convert is written using digits from 0 to 9!\nWrite `12`, not `twelve`");
             return;
         }
+        if(distanceWords.includes(args[1])){}
+        else if(weightWords.includes(args[1]) && !((args[1] == "ounce" || args[1] == "ounces" || args[1] == "oz") && volumeWords.includes(args[3]))){}
+        else if(volumeWords.includes(args[1])){}
+        else if(temperatureWords.includes(args[1])){}
+        else{
+            message.channel.send("Seems like I haven't been taught the unit `" + args[1] + "` yet!\nMake sure you didn't make a typo and contact @Wep#0525 if you want me to learn this unit!");
+            return;
+        }
     }
 });
 
