@@ -184,10 +184,10 @@ if(!message.content.startsWith(prefix) || message.author.bot) return;
                 if(weightWords.includes(args[3])){
                     message.channel.send("I can't convert units of distance to units of weight!\nIf you think this is a mistake, please contact @Wep#0525");
                 }
-                if(volumeWords.includes(args[3])){
+                else if(volumeWords.includes(args[3])){
                     message.channel.send("I can't convert units of distance to units of volume!\nIf you think this is a mistake, please contact @Wep#0525");
                 }
-                if(temperatureWords.includes(args[3])){
+                else if(temperatureWords.includes(args[3])){
                     message.channel.send("I can't convert units of distance to units of temperature!\nIf you think this is a mistake, please contact @Wep#0525");
                 }
                 else{
@@ -201,10 +201,10 @@ if(!message.content.startsWith(prefix) || message.author.bot) return;
                 if(distanceWords.includes(args[3])){
                     message.channel.send("I can't convert units of weight to units of distance!\nIf you think this is a mistake, please contact @Wep#0525");
                 }
-                if(volumeWords.includes(args[3])){
+                else if(volumeWords.includes(args[3])){
                     message.channel.send("I can't convert units of weight to units of volume!\nIf you think this is a mistake, please contact @Wep#0525");
                 }
-                if(temperatureWords.includes(args[3])){
+                else if(temperatureWords.includes(args[3])){
                     message.channel.send("I can't convert units of weight to units of temperature!\nIf you think this is a mistake, please contact @Wep#0525");
                 }
                 else{
@@ -218,10 +218,10 @@ if(!message.content.startsWith(prefix) || message.author.bot) return;
                 if(weightWords.includes(args[3])){
                     message.channel.send("I can't convert units of volume to units of weight!\nIf you think this is a mistake, please contact @Wep#0525");
                 }
-                if(distanceWords.includes(args[3])){
+                else if(distanceWords.includes(args[3])){
                     message.channel.send("I can't convert units of volume to units of distance!\nIf you think this is a mistake, please contact @Wep#0525");
                 }
-                if(temperatureWords.includes(args[3])){
+                else if(temperatureWords.includes(args[3])){
                     message.channel.send("I can't convert units of volume to units of temperature!\nIf you think this is a mistake, please contact @Wep#0525");
                 }
                 else{
@@ -235,10 +235,10 @@ if(!message.content.startsWith(prefix) || message.author.bot) return;
                 if(weightWords.includes(args[3])){
                     message.channel.send("I can't convert units of temperature to units of weight!\nIf you think this is a mistake, please contact @Wep#0525");
                 }
-                if(volumeWords.includes(args[3])){
+                else if(volumeWords.includes(args[3])){
                     message.channel.send("I can't convert units of temperature to units of volume!\nIf you think this is a mistake, please contact @Wep#0525");
                 }
-                if(distanceWords.includes(args[3])){
+                else if(distanceWords.includes(args[3])){
                     message.channel.send("I can't convert units of temperature to units of distance!\nIf you think this is a mistake, please contact @Wep#0525");
                 }
                 else{
