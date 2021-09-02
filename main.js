@@ -171,7 +171,9 @@ if(!message.content.startsWith(prefix) || message.author.bot) return;
     }
     
     if(command === 'convert'){
-        message.channel.send(args[0]);
+        if(args.length < 4){
+            message.channel.send("Looks like something went wrong! This command should be in the form:\n [number] [unit] to [unit]\n Example:\n 1 mile to metres");
+        }
     }
 });
 
