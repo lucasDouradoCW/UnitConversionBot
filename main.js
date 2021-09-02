@@ -116,6 +116,46 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = '?';
 
+const distanceWords = ["millimetres", "millimetre", "millimeters", "millimeter", "mm", 
+"centimetres", "centimetre", "centimeters", "centimeter", "cm", 
+"decimetres", "decimetre", "decimeters", "decimeter", 
+"metres", "metre", "meters", "meter", "m", 
+"decametres", "decametre", "decameters", "decameter", 
+"hectometres", "hectometre", "hectometers", "hectometer", "hm", 
+"kilometres", "kilometre", "kilometers", "kilometer", "km", 
+"inches", "inch", "in", 
+"foot", "feet", "ft", 
+"yard", "yards", "yd", 
+"mile", "miles", "mi"];
+const weightWords = ["milligram", "milligrams", "mg",  
+"centigram", "centigrams","cg", 
+"decigrams", "decigram",  
+"grams", "gram", "g", 
+"decagrams", "decagram",  
+"hectograms", "hectogram", "hg", 
+"kilograms", "kilogram", "kg", 
+"ounce", "ounces", "oz", 
+"pound", "pounds", "lb", "lbs", 
+"stone", "stones", "st", 
+"fuckload", "fuckloads", 
+"shitton", "shittons"];
+const volumeWords = ["millilitres", "millilitre", "milliliters", "milliliter", "ml", 
+"centilitres", "centilitre", "centiliters", "centiliter", "cl", 
+"decilitres", "decilitre", "deciliters", "deciliter", 
+"litres", "litre", "liters", "liter", "l", 
+"decalitres", "decalitre", "decaliters", "decaliter", 
+"hectolitres", "hectolitre", "hectoliters", "hectoliter", "hl", 
+"kilolitres", "kilolitre", "kiloliters", "kiloliter", "kl", 
+"teaspoon", "teaspoons", "tsp", "tsps", 
+"tablespoon", "tablespoons", "tbsp", "tbsps", 
+"ounce", "ounces", "oz", "floz", 
+"cup", "cups", 
+"gallon", "gallons", "gal", "gals", 
+"pint", "pints", "pt"];
+const temperatureWords = ["celsius", "c", "°c", 
+"fahrenheit", "f", "°f", 
+"kelvin", "k"];
+
 client.once('ready', () => {
     console.log("Unit Conversion is online!");
 });
@@ -131,11 +171,20 @@ if(!message.content.startsWith(prefix) || message.author.bot) return;
     }
 });
 
+if(!message.content.startsWith(prefix) || message.author.bot) return;
+
+    const args = message.content.slice(prefix.length).split(/ +/);
+    const command = args.shift().toLowerCase();
+
+    if(command === 'convert'){
+        message.channel.send("pong!");
+    }
+});
+
 client.on('message', message => {
-    if(message.author.bot) return;
+    if(message.author.bot || message.content.startsWith(prefix)) return;
 
     const args = message.content.split(" ");
-    if(args[0].toLowerCase() === "?ignore" || args[0].toLowerCase() === "?i" ) return;
     const punctuation = /[@.,\/#!?\\$'"%\^&\*;:{}=_`\[\]~()]/g;
     var conversions = 0;
     var output = "";
