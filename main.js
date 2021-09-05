@@ -539,7 +539,7 @@ function convertWeight(num, unit1, unit2){
             output += num + " stones = ";
         }
     }
-    else if(unit1 == "fuckload" || unit1 == "fuckload"){
+    else if(unit1 == "fuckload" || unit1 == "fuckloads"){
         grams = num*200000;
         if(num == 1){
             output += num + " fuckload = ";
@@ -599,7 +599,7 @@ function convertWeight(num, unit1, unit2){
         result = grams/6350.293;
         output += result.toFixed(2) + " stones";
     }
-    else if(unit2 == "fuckload" || unit2 == "fuckload"){
+    else if(unit2 == "fuckload" || unit2 == "fuckloads"){
         grams = num*200000;
         result = grams/200000;
         output += result.toFixed(2) + " fuckloads";
