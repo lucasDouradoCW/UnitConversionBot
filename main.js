@@ -112,6 +112,541 @@ function FahrenheitToCelsius(fahrenheit){
     return (" = " + celsius.toFixed(2) + "°C\n");
 }
 
+function convertDistance(num, unit1, unit2){
+    var metres = 0;
+    var result = 0;
+    var output = "";
+    
+    if(unit1 == "millimetres" || unit1 == "millimetre" || unit1 == "millimeter" || unit1 == "millimeters" || unit1 == "mm"){
+        metres = num/1000;
+        if (num == 1){
+            output += num + " millimetre = ";
+        }
+        else{
+            output += num + " millimetres = ";
+        }
+    }
+    else if(unit1 == "centimetres" || unit1 == "centimetre" || unit1 == "centimeter" || unit1 == "centimeters" || unit1 == "cm"){
+        metres = num/100;
+        if(num == 1){
+            output += num + " centimetre = ";
+        }
+        else{
+            output += num + " centimetres = ";
+        }
+    }
+    else if(unit1 == "decimetres" || unit1 == "decimetre" || unit1 == "decimeter" || unit1 == "decimeters"){
+        metres = num/10;
+        if(num == 1){
+            output += num + " decimetre = ";
+        }
+        else{
+            output += num + " decimetres = ";
+        }
+    }
+    else if(unit1 == "metres" || unit1 == "metre" || unit1 == "meter" || unit1 == "meters" || unit1 == "m"){
+        metres = num;
+        if(num == 1){
+            output += num + " metre = ";
+        }
+        else{
+            output += num + " metres = ";
+        }
+    }
+    else if(unit1 == "decametres" || unit1 == "decametre" || unit1 == "decameter" || unit1 == "decameters"){
+        metres = num*10;
+        if(num == 1){
+            output += num + " decametre = ";
+        }
+        else{
+            output += num + " decametres = ";
+        }
+    }
+    else if(unit1 == "hectometres" || unit1 == "hectometre" || unit1 == "hectometer" || unit1 == "hectometers" || unit1 == "hm"){
+        metres = num*100;
+        if(num == 1){
+            output += num + " hectometre = ";
+        }
+        else{
+            output += num + " hectometres = ";
+        }
+    }
+    else if(unit1 == "kilometres" || unit1 == "kilometre" || unit1 == "kilometer" || unit1 == "kilometers" || unit1 == "km"){
+        metres = num*1000;
+        if(num == 1){
+            output += num + " kilometre = ";
+        }
+        else{
+            output += num + " kilometres = ";
+        }
+    }
+    else if(unit1 == "inches" || unit1 == "inch" || unit1 == "in"){
+        metres = num*0.0254;
+        if(num == 1){
+            output += num + " inch = ";
+        }
+        else{
+            output += num + " inches = ";
+        }
+    }
+    else if(unit1 == "foot" || unit1 == "feet" || unit1 == "ft"){
+        metres = num*0.3048;
+        if(num == 1){
+            output += num + " foot = ";
+        }
+        else{
+            output += num + " feet = ";
+        }
+    }
+    else if(unit1 == "yard" || unit1 == "yards" || unit1 == "yd"){
+        metres = num*0.9144;
+        if(num == 1){
+            output += num + " yard = ";
+        }
+        else{
+            output += num + " yards = ";
+        }
+    }
+    else if(unit1 == "miles" || unit1 == "mile" || unit1 == "mi"){
+        metres = num*1609.344;
+        if(num == 1){
+            output += num + " mile = ";
+        }
+        else{
+            output += num + " miles = ";
+        }
+    }
+
+    if(unit2 == "millimetres" || unit2 == "millimetre" || unit2 == "millimeter" || unit2 == "millimeters" || unit2 == "mm"){
+        result = metres*1000;
+        output += result.toFixed(2) + " millimetres";
+    }
+    else if(unit2 == "centimetres" || unit2 == "centimetre" || unit2 == "centimeter" || unit2 == "centimeters" || unit2 == "cm"){
+        result = metres*100;
+        output += result.toFixed(2) + " centimetres";
+    }
+    else if(unit2 == "decimetres" || unit2 == "decimetre" || unit2 == "decimeter" || unit2 == "decimeters"){
+        result = metres*10;
+        output += result.toFixed(2) + " decimetres";
+    }
+    else if(unit2 == "metres" || unit2 == "metre" || unit2 == "meter" || unit2 == "meters" || unit2 == "m"){
+        result = metres;
+        output += result.toFixed(2) + " metres";
+    }
+    else if(unit2 == "decametres" || unit2 == "decametre" || unit2 == "decameter" || unit2 == "decameters"){
+        result = metres/10;
+        output += result.toFixed(2) + " decametres";
+    }
+    else if(unit2 == "hectometres" || unit2 == "hectometre" || unit2 == "hectometer" || unit2 == "hectometers" || unit2 == "hm"){
+        result = metres/100;
+        output += result.toFixed(2) + " hectometres";
+    }
+    else if(unit2 == "kilometres" || unit2 == "kilometre" || unit2 == "kilometer" || unit2 == "kilometers" || unit2 == "km"){
+        result = metres/1000;
+        output += result.toFixed(2) + " kilometres";
+    }
+    else if(unit2 == "inches" || unit2 == "inch" || unit2 == "in"){
+        result = metres/0.0254;
+        output += result.toFixed(2) + " inches";
+    }
+    else if(unit2 == "foot" || unit2 == "feet" || unit2 == "ft"){
+        result = metres/0.3048;
+        output += result.toFixed(2) + " feet";
+    }
+    else if(unit2 == "yard" || unit2 == "yards" || unit2 == "yd"){
+        result = metres/0.9144;
+        output += result.toFixed(2) + " yards";
+    }
+    else if(unit2 == "miles" || unit2 == "mile" || unit2 == "mi"){
+        result = metres/1609.344;
+        output += result.toFixed(2) + " miles";
+    }
+
+    return (output);
+}
+
+function convertVolume(num, unit1, unit2){
+    var litres = 0;
+    var result = 0;
+    var output = "";
+    
+    if(unit1 == "millilitres" || unit1 == "millilitre" || unit1 == "milliliter" || unit1 == "milliliters" || unit1 == "ml"){
+        litres = num/1000;
+        if (num == 1){
+            output += num + " millilitre = ";
+        }
+        else{
+            output += num + " millilitres = ";
+        }
+    }
+    else if(unit1 == "centilitres" || unit1 == "centilitre" || unit1 == "centiliter" || unit1 == "centiliters" || unit1 == "cl"){
+        litres = num/100;
+        if(num == 1){
+            output += num + " centilitre = ";
+        }
+        else{
+            output += num + " centilitres = ";
+        }
+    }
+    else if(unit1 == "decilitres" || unit1 == "decilitre" || unit1 == "deciliter" || unit1 == "deciliters"){
+        litres = num/10;
+        if(num == 1){
+            output += num + " decilitre = ";
+        }
+        else{
+            output += num + " decilitres = ";
+        }
+    }
+    else if(unit1 == "litres" || unit1 == "litre" || unit1 == "liter" || unit1 == "liters" || unit1 == "l"){
+        litres = num;
+        if(num == 1){
+            output += num + " litre = ";
+        }
+        else{
+            output += num + " litres = ";
+        }
+    }
+    else if(unit1 == "decalitres" || unit1 == "decalitre" || unit1 == "decaliter" || unit1 == "decaliters"){
+        litres = num*10;
+        if(num == 1){
+            output += num + " decalitre = ";
+        }
+        else{
+            output += num + " decalitres = ";
+        }
+    }
+    else if(unit1 == "hectolitres" || unit1 == "hectolitre" || unit1 == "hectoliter" || unit1 == "hectoliters" || unit1 == "hl"){
+        litres = num*100;
+        if(num == 1){
+            output += num + " hectolitre = ";
+        }
+        else{
+            output += num + " hectolitres = ";
+        }
+    }
+    else if(unit1 == "kilolitres" || unit1 == "kilolitre" || unit1 == "kiloliter" || unit1 == "kiloliters" || unit1 == "kl"){
+        litres = num*1000;
+        if(num == 1){
+            output += num + " kilolitre = ";
+        }
+        else{
+            output += num + " kilolitres = ";
+        }
+    }
+    else if(unit1 == "teaspoon" || unit1 == "teaspoons" || unit1 == "tsp" || unit1 == "tsps"){
+        litres = num*0.00492892159;
+        if(num == 1){
+            output += num + " teaspoon = ";
+        }
+        else{
+            output += num + " teaspoons = ";
+        }
+    }
+    else if(unit1 == "tablespoon" || unit1 == "tablespoons" || unit1 == "tbsp" || unit1 == "tbsps"){
+        litres = num*0.0147867648;
+        if(num == 1){
+            output += num + " tablespoon = ";
+        }
+        else{
+            output += num + " tablespoons = ";
+        }
+    }
+    else if(unit1 == "ounce" || unit1 == "ounces" || unit1 == "oz" || unit1 == "floz"){
+        litres = num*0.0295735296;
+        if(num == 1){
+            output += num + " ounce = ";
+        }
+        else{
+            output += num + " ounces = ";
+        }
+    }
+    else if(unit1 == "cups" || unit1 == "cup"){
+        litres = num*0.236588237;
+        if(num == 1){
+            output += num + " cup = ";
+        }
+        else{
+            output += num + " cups = ";
+        }
+    }
+    else if(unit1 == "pint" || unit1 == "pints" || unit1 == "pt"){
+        litres = num*0.473176473;
+        if(num == 1){
+            output += num + " pint = ";
+        }
+        else{
+            output += num + " pints = ";
+        }
+    }
+    else if(unit1 == "gallon" || unit1 == "gallons" || unit1 == "gal" || unit1 == "gals"){
+        litres = num*3.78541178;
+        if(num == 1){
+            output += num + " gallon = ";
+        }
+        else{
+            output += num + " gallons = ";
+        }
+    }
+
+    if(unit2 == "millilitres" || unit2 == "millilitre" || unit2 == "milliliter" || unit2 == "milliliters" || unit2 == "ml"){
+        result = litres*1000;
+        output += result.toFixed(2) + " millilitres";
+    }
+    else if(unit2 == "centilitres" || unit2 == "centilitre" || unit2 == "centiliter" || unit2 == "centiliters" || unit2 == "cl"){
+        result = litres*100;
+        output += result.toFixed(2) + " centilitres";
+    }
+    else if(unit2 == "decilitres" || unit2 == "decilitre" || unit2 == "deciliter" || unit2 == "deciliters"){
+        result = litres*10;
+        output += result.toFixed(2) + " decilitres";
+    }
+    else if(unit2 == "litres" || unit2 == "litre" || unit2 == "liter" || unit2 == "liters" || unit2 == "l"){
+        result = litres;
+        output += result.toFixed(2) + " litres";
+    }
+    else if(unit2 == "decalitres" || unit2 == "decalitre" || unit2 == "decaliter" || unit2 == "decaliters"){
+        result = litres/10;
+        output += result.toFixed(2) + " decalitres";
+    }
+    else if(unit2 == "hectolitres" || unit2 == "hectolitre" || unit2 == "hectoliter" || unit2 == "hectoliters" || unit2 == "hl"){
+        result = litres/100;
+        output += result.toFixed(2) + " hectolitres";
+    }
+    else if(unit2 == "kilolitres" || unit2 == "kilolitre" || unit2 == "kiloliter" || unit2 == "kiloliters" || unit2 == "kl"){
+        result = litres/1000;
+        output += result.toFixed(2) + " kilolitres";
+    }
+    else if(unit2 == "teaspoon" || unit2 == "teaspoons" || unit2 == "tsp" || unit2 == "tsps"){
+        result = litres/0.00492892159;
+        output += result.toFixed(2) + " teaspoons";
+    }
+    else if(unit2 == "tablespoon" || unit2 == "tablespoons" || unit2 == "tbsp" || unit2 == "tbsps"){
+        result = litres/0.0147867648;
+        output += result.toFixed(2) + " tablespoons";
+    }
+    else if(unit2 == "ounce" || unit2 == "ounces" || unit2 == "oz" || unit2 == "floz"){
+        result = litres/0.0295735296;
+        output += result.toFixed(2) + " ounces";
+    }
+    else if(unit2 == "cups" || unit2 == "cup"){
+        result = litres/0.236588237;
+        output += result.toFixed(2) + " cups";
+    }
+    else if(unit2 == "pint" || unit2 == "pints" || unit2 == "pt"){
+        result = litres/0.473176473;
+        output += result.toFixed(2) + " pints";
+    }
+    else if(unit2 == "gallon" || unit2 == "gallons" || unit2 == "gal" || unit2 == "gals"){
+        result = litres/3.78541178;
+        output += result.toFixed(2) + " gallons";
+    }
+
+    return (output);
+}
+
+function convertWeight(num, unit1, unit2){
+    var grams = 0;
+    var result = 0;
+    var output = "";
+    
+    if(unit1 == "milligrams" || unit1 == "milligram" || unit1 == "mg"){
+        grams = num/1000;
+        if (num == 1){
+            output += num + " milligram = ";
+        }
+        else{
+            output += num + " milligrams = ";
+        }
+    }
+    else if(unit1 == "centigrams" || unit1 == "centigram" || unit1 == "cg"){
+        grams = num/100;
+        if(num == 1){
+            output += num + " centigram = ";
+        }
+        else{
+            output += num + " centigrams = ";
+        }
+    }
+    else if(unit1 == "decigrams" || unit1 == "decigram"){
+        grams = num/10;
+        if(num == 1){
+            output += num + " decigram = ";
+        }
+        else{
+            output += num + " decigrams = ";
+        }
+    }
+    else if(unit1 == "grams" || unit1 == "gram" || unit1 == "g"){
+        grams = num;
+        if(num == 1){
+            output += num + " gram = ";
+        }
+        else{
+            output += num + " grams = ";
+        }
+    }
+    else if(unit1 == "decagrams" || unit1 == "decagram"){
+        grams = num*10;
+        if(num == 1){
+            output += num + " decagram = ";
+        }
+        else{
+            output += num + " decagrams = ";
+        }
+    }
+    else if(unit1 == "hectograms" || unit1 == "hectogram" || unit1 == "hg"){
+        grams = num*100;
+        if(num == 1){
+            output += num + " hectogram = ";
+        }
+        else{
+            output += num + " hectograms = ";
+        }
+    }
+    else if(unit1 == "kilograms" || unit1 == "kilogram" || unit1 == "kilo" || unit1 == "kilos" || unit1 == "kg"){
+        grams = num*1000;
+        if(num == 1){
+            output += num + " kilogram = ";
+        }
+        else{
+            output += num + " kilograms = ";
+        }
+    }
+    else if(unit1 == "ounce" || unit1 == "ounces" || unit1 == "oz"){
+        grams = num*28.35;
+        if(num == 1){
+            output += num + " ounce = ";
+        }
+        else{
+            output += num + " ounces = ";
+        }
+    }
+    else if(unit1 == "pound" || unit1 == "pounds" || unit1 == "lb" || unit1 == "lbs"){
+        grams = num*453.592;
+        if(num == 1){
+            output += num + " pound = ";
+        }
+        else{
+            output += num + " pounds = ";
+        }
+    }
+    else if(unit1 == "stone" || unit1 == "stones" || unit1 == "st"){
+        grams = num*6350.293;
+        if(num == 1){
+            output += num + " stone = ";
+        }
+        else{
+            output += num + " stones = ";
+        }
+    }
+    else if(unit1 == "fuckload" || unit1 == "fuckload"){
+        grams = num*200000;
+        if(num == 1){
+            output += num + " fuckload = ";
+        }
+        else{
+            output += num + " fuckloads = ";
+        }
+    }
+    else if(unit1 == "shitton" || unit1 == "shittons"){
+        grams = num*500000;
+        if(num == 1){
+            output += num + " shitton = ";
+        }
+        else{
+            output += num + " shittons = ";
+        }
+    }
+
+    if(unit2 == "milligrams" || unit2 == "milligram" || unit2 == "mg"){
+        result = grams*1000;
+        output += result.toFixed(2) + " milligrams";
+    }
+    else if(unit2 == "centigrams" || unit2 == "centigram" || unit2 == "cg"){
+        result = grams*100;
+        output += result.toFixed(2) + " centigrams";
+    }
+    else if(unit2 == "decigrams" || unit2 == "decigram"){
+        result = grams*10;
+        output += result.toFixed(2) + " decigrams";
+    }
+    else if(unit2 == "grams" || unit2 == "gram" || unit2 == "g"){
+        result = grams;
+        output += result.toFixed(2) + " grams";
+    }
+    else if(unit2 == "decagrams" || unit2 == "decagram"){
+        result = grams/10;
+        output += result.toFixed(2) + " decagrams";
+    }
+    else if(unit2 == "hectograms" || unit2 == "hectogram" || unit2 == "hg"){
+        result = grams/100;
+        output += result.toFixed(2) + " hectograms";
+    }
+    else if(unit2 == "kilograms" || unit2 == "kilogram" || unit2 == "kilo" || unit2 == "kilos" || unit2 == "kg"){
+        grams = num*1000;
+        result = grams/1000;
+        output += result.toFixed(2) + " kilograms";
+    }
+    else if(unit2 == "ounce" || unit2 == "ounces" || unit2 == "oz"){
+        result = grams/28.35;
+        output += result.toFixed(2) + " ounces";
+    }
+    else if(unit2 == "pound" || unit2 == "pounds" || unit2 == "lb" || unit2 == "lbs"){
+        result = grams/453.592;
+        output += result.toFixed(2) + " pounds";
+    }
+    else if(unit2 == "stone" || unit2 == "stones" || unit1 == "st"){
+        result = grams/6350.293;
+        output += result.toFixed(2) + " stones";
+    }
+    else if(unit2 == "fuckload" || unit2 == "fuckload"){
+        grams = num*200000;
+        result = grams/200000;
+        output += result.toFixed(2) + " fuckloads";
+    }
+    else if(unit2 == "shitton" || unit2 == "shittons"){
+        grams = num*500000;
+        result = grams/500000;
+        output += result.toFixed(2) + " shittons";
+    }
+
+    return (output);
+}
+
+function convertTemperature(num, unit1, unit2){
+    var kelvin = 0;
+    var result = 0;
+    var output = "";
+    
+    if(unit1 == "celsius" || unit1 == "c" || unit1 == "°c"){
+        kelvin = num + 273.15;
+        output += num + "°C = ";
+    }
+    else if(unit1 == "fahrenheit" || unit1 == "f" || unit1 == "°f"){
+        kelvin = (num - 32)*5/9 + 273.15;
+        output += num + "°F = ";
+    }
+    else if(unit1 == "kelvin" || unit1 == "k"){
+        kelvin = num;
+        output += num + " kelvin = ";
+    }
+
+    if(unit2 == "celsius" || unit2 == "c" || unit2 == "°c"){
+        result = kelvin - 273.15;
+        output += result.toFixed(2) + "°C";
+    }
+    else if(unit2 == "fahrenheit" || unit2 == "f" || unit2 == "°f"){
+        result = (kelvin - 273.15)*9/5 + 32;
+        output += result.toFixed(2) + "°F";
+    }
+    else if(unit2 == "kelvin" || unit2 == "k"){
+        result = kelvin;
+        output += result.toFixed(2) + " kelvin";
+    }
+
+    return (output);
+}
+
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = '?';
@@ -133,7 +668,7 @@ const weightWords = ["milligram", "milligrams", "mg",
 "grams", "gram", "g", 
 "decagrams", "decagram",  
 "hectograms", "hectogram", "hg", 
-"kilograms", "kilogram", "kg", 
+"kilograms", "kilogram", "kg", "kilo", "kilos", 
 "ounce", "ounces", "oz", 
 "pound", "pounds", "lb", "lbs", 
 "stone", "stones", "st", 
@@ -179,76 +714,89 @@ if(!message.content.startsWith(prefix) || message.author.bot) return;
             message.channel.send("Make sure that the number you want to convert is written using digits from 0 to 9!\nWrite `12`, not `twelve`");
             return;
         }
-        if(distanceWords.includes(args[1])){
-            if(!distanceWords.includes(args[3])){
-                if(weightWords.includes(args[3])){
+
+        var num = parseFloat(args[0]);
+        var unit1 = args[1].toLowerCase();
+        var unit2 = args[3].toLowerCase();
+
+        if(distanceWords.includes(unit1)){
+            if(!distanceWords.includes(unit2)){
+                if(weightWords.includes(unit2)){
                     message.channel.send("I can't convert units of distance to units of weight!\nIf you think this is a mistake, please contact @Wep#0525");
                 }
-                else if(volumeWords.includes(args[3])){
+                else if(volumeWords.includes(unit2)){
                     message.channel.send("I can't convert units of distance to units of volume!\nIf you think this is a mistake, please contact @Wep#0525");
                 }
-                else if(temperatureWords.includes(args[3])){
+                else if(temperatureWords.includes(unit2)){
                     message.channel.send("I can't convert units of distance to units of temperature!\nIf you think this is a mistake, please contact @Wep#0525");
                 }
                 else{
-                    message.channel.send("Seems like I haven't learned the unit `" + args[3] + "` yet!\nMake sure you didn't make a typo and contact @Wep#0525 if you want me to learn this unit!");
+                    message.channel.send("Seems like I haven't learned the unit `" + unit2 + "` yet!\nMake sure you didn't make a typo and contact @Wep#0525 if you want me to learn this unit!");
                 }
                 return;
             }
+
+            message.channel.send(convertDistance(num, unit1, unit2));
         }
-        else if(weightWords.includes(args[1]) && !((args[1] == "ounce" || args[1] == "ounces" || args[1] == "oz") && volumeWords.includes(args[3]))){
-            if(!weightWords.includes(args[3])){
-                if(distanceWords.includes(args[3])){
+        else if(weightWords.includes(unit1) && !((unit1 == "ounce" || unit1 == "ounces" || unit1 == "oz") && volumeWords.includes(unit2))){
+            if(!weightWords.includes(unit2)){
+                if(distanceWords.includes(unit2)){
                     message.channel.send("I can't convert units of weight to units of distance!\nIf you think this is a mistake, please contact @Wep#0525");
                 }
-                else if(volumeWords.includes(args[3])){
+                else if(volumeWords.includes(unit2)){
                     message.channel.send("I can't convert units of weight to units of volume!\nIf you think this is a mistake, please contact @Wep#0525");
                 }
-                else if(temperatureWords.includes(args[3])){
+                else if(temperatureWords.includes(unit2)){
                     message.channel.send("I can't convert units of weight to units of temperature!\nIf you think this is a mistake, please contact @Wep#0525");
                 }
                 else{
-                    message.channel.send("Seems like I haven't learned the unit `" + args[3] + "` yet!\nMake sure you didn't make a typo and contact @Wep#0525 if you want me to learn this unit!");
+                    message.channel.send("Seems like I haven't learned the unit `" + unit2 + "` yet!\nMake sure you didn't make a typo and contact @Wep#0525 if you want me to learn this unit!");
                 }
                 return;
             }
+
+            message.channel.send(convertWeight(num, unit1, unit2));
         }
-        else if(volumeWords.includes(args[1])){
-            if(!volumeWords.includes(args[3])){
-                if(weightWords.includes(args[3])){
+        else if(volumeWords.includes(unit1)){
+            if(!volumeWords.includes(unit2)){
+                if(weightWords.includes(unit2)){
                     message.channel.send("I can't convert units of volume to units of weight!\nIf you think this is a mistake, please contact @Wep#0525");
                 }
-                else if(distanceWords.includes(args[3])){
+                else if(distanceWords.includes(unit2)){
                     message.channel.send("I can't convert units of volume to units of distance!\nIf you think this is a mistake, please contact @Wep#0525");
                 }
-                else if(temperatureWords.includes(args[3])){
+                else if(temperatureWords.includes(unit2)){
                     message.channel.send("I can't convert units of volume to units of temperature!\nIf you think this is a mistake, please contact @Wep#0525");
                 }
                 else{
-                    message.channel.send("Seems like I haven't learned the unit `" + args[3] + "` yet!\nMake sure you didn't make a typo and contact @Wep#0525 if you want me to learn this unit!");
+                    message.channel.send("Seems like I haven't learned the unit `" + unit2 + "` yet!\nMake sure you didn't make a typo and contact @Wep#0525 if you want me to learn this unit!");
                 }
                 return;
             }
+
+            message.channel.send(convertVolume(num, unit1, unit2));
         }
-        else if(temperatureWords.includes(args[1])){
-            if(!temperatureWords.includes(args[3])){
-                if(weightWords.includes(args[3])){
+        else if(temperatureWords.includes(unit1)){
+            if(!temperatureWords.includes(unit2)){
+                if(weightWords.includes(unit2)){
                     message.channel.send("I can't convert units of temperature to units of weight!\nIf you think this is a mistake, please contact @Wep#0525");
                 }
-                else if(volumeWords.includes(args[3])){
+                else if(volumeWords.includes(unit2)){
                     message.channel.send("I can't convert units of temperature to units of volume!\nIf you think this is a mistake, please contact @Wep#0525");
                 }
-                else if(distanceWords.includes(args[3])){
+                else if(distanceWords.includes(unit2)){
                     message.channel.send("I can't convert units of temperature to units of distance!\nIf you think this is a mistake, please contact @Wep#0525");
                 }
                 else{
-                    message.channel.send("Seems like I haven't learned the unit `" + args[3] + "` yet!\nMake sure you didn't make a typo and contact @Wep#0525 if you want me to learn this unit!");
+                    message.channel.send("Seems like I haven't learned the unit `" + unit2 + "` yet!\nMake sure you didn't make a typo and contact @Wep#0525 if you want me to learn this unit!");
                 }
                 return;
             }
+
+            message.channel.send(convertTemperature(num, unit1, unit2));
         }
         else{
-            message.channel.send("Seems like I haven't learned the unit `" + args[1] + "` yet!\nMake sure you didn't make a typo and contact @Wep#0525 if you want me to learn this unit!");
+            message.channel.send("Seems like I haven't learned the unit `" + unit1 + "` yet!\nMake sure you didn't make a typo and contact @Wep#0525 if you want me to learn this unit!");
             return;
         }
     }
